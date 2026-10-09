@@ -3,10 +3,306 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pestañas Araceli</title>
+  <meta name="description" content="Araceli Lashes: extensiones de pestañas personalizadas en Zona Once–Balvanera, CABA. Consultá por turnos vía WhatsApp.">
+  <meta name="theme-color" content="#f5e9e2">
+  <title>Araceli Lashes | Realzamos tu mirada</title>
+  <style>
+    :root {
+      --cream: #fbf7f3;
+      --nude: #f0dfd5;
+      --pink: #e9c9c5;
+      --rose: #b97f7b;
+      --ink: #302522;
+      --muted: #75645e;
+      --white: #fffdfb;
+      --line: #eadbd3;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .topbar {
+      padding: 14px 22px;
+      background: rgba(255,253,251,.94);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      max-width: 1120px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      font-weight: bold;
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+    .brand span { color: var(--rose); }
+    .navlinks { display: flex; align-items: center; gap: 22px; }
+    .navlinks a { text-decoration: none; font-size: .92rem; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      text-decoration: none;
+      font-weight: 650;
+      border: 1px solid var(--ink);
+      transition: transform .2s, background .2s;
+    }
+    .button:hover { transform: translateY(-2px); background: #493833; }
+    .button.light { background: transparent; color: var(--ink); }
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 22px 72px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .19em;
+      color: var(--rose);
+      font-size: .76rem;
+      font-weight: 750;
+    }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.15; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 500; margin: 14px 0 18px; letter-spacing: -.04em; }
+    h1 em { color: var(--rose); font-weight: 500; }
+    .hero p { max-width: 510px; color: var(--muted); font-size: 1.08rem; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .hero-image { position: relative; }
+    .hero-image img {
+      width: 100%; height: 510px; object-fit: cover;
+      border-radius: 48% 48% 18px 18px;
+      box-shadow: 18px 18px 0 var(--nude);
+      display: block;
+    }
+    .image-note {
+      position: absolute; left: -18px; bottom: 24px;
+      background: var(--white); padding: 16px 20px; border-radius: 14px;
+      box-shadow: 0 10px 35px #30252212; max-width: 225px;
+      font-family: Georgia, serif; font-size: 1.05rem;
+    }
+    .section { padding: 76px 22px; }
+    .section.alt { background: #f4e9e2; }
+    .container { max-width: 1120px; margin: auto; }
+    .section-head { text-align: center; max-width: 650px; margin: 0 auto 38px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin: 10px 0 14px; font-weight: 500; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .service {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: 18px; overflow: hidden; padding-bottom: 20px;
+    }
+    .service img { width: 100%; height: 205px; object-fit: cover; display: block; }
+    .service h3 { font-size: 1.35rem; margin: 18px 18px 8px; font-weight: 500; }
+    .service p { color: var(--muted); font-size: .93rem; margin: 0 18px; }
+    .promise {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; text-align: center;
+    }
+    .promise-item { padding: 20px; }
+    .promise-item .symbol { color: var(--rose); font-size: 1.5rem; }
+    .promise-item h3 { font-size: 1.3rem; margin: 8px 0; font-weight: 500; }
+    .promise-item p { color: var(--muted); font-size: .95rem; margin: 0; }
+    .gallery { display: grid; grid-template-columns: 1.1fr .9fr .9fr; gap: 16px; }
+    .gallery img { width: 100%; height: 310px; object-fit: cover; border-radius: 18px; display: block; }
+    .booking {
+      background: var(--ink); color: var(--white); border-radius: 28px;
+      padding: 48px 26px; text-align: center;
+    }
+    .booking .eyebrow { color: #e6bcb6; }
+    .booking h2 { font-size: clamp(2rem, 4vw, 3.1rem); margin: 12px 0; font-weight: 500; }
+    .booking p { color: #e4d5cf; max-width: 580px; margin: 0 auto 24px; }
+    .booking .button { background: #e7c4bf; color: var(--ink); border-color: #e7c4bf; }
+    .location { text-align: center; }
+    .location h2 { font-size: 2.4rem; font-weight: 500; margin: 12px 0; }
+    .location p { color: var(--muted); }
+    footer { padding: 28px 22px; text-align: center; color: var(--muted); font-size: .88rem; }
+    .floating-wa {
+      position: fixed; right: 20px; bottom: 20px; z-index: 20;
+      background: #218c58; color: white; text-decoration: none;
+      padding: 13px 18px; border-radius: 999px; font-weight: 700;
+      box-shadow: 0 8px 24px #0002;
+    }
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; padding-top: 42px; gap: 35px; }
+      .hero-image img { height: 420px; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery img:first-child { grid-column: 1 / -1; }
+      .navlinks a:not(.button) { display: none; }
+    }
+    @media (max-width: 520px) {
+      .topbar { padding: 12px 15px; }
+      .brand { font-size: 1.1rem; }
+      .navlinks .button { padding: 10px 13px; font-size: .85rem; }
+      .hero { padding: 40px 18px 55px; }
+      .hero-image img { height: 340px; box-shadow: 10px 10px 0 var(--nude); }
+      .image-note { left: -4px; bottom: 12px; font-size: .92rem; }
+      .section { padding: 56px 18px; }
+      .services { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .service img { height: 155px; }
+      .service h3 { font-size: 1.08rem; margin: 13px 12px 6px; }
+      .service p { font-size: .84rem; margin: 0 12px; }
+      .promise { grid-template-columns: 1fr; gap: 4px; }
+      .gallery { gap: 10px; }
+      .gallery img { height: 190px; }
+      .booking { padding: 38px 20px; }
+      .floating-wa { right: 12px; bottom: 12px; padding: 12px 15px; font-size: .9rem; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Pestañas Araceli</h1>
-  <p>Bienvenidas a nuestro espacio de belleza.</p>
+  <header class="topbar">
+    <nav class="nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">Araceli <span>Lashes</span></a>
+      <div class="navlinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#estilo">Nuestro estilo</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a class="button" href="https://wa.me/5491136077931?text=Hola%20Araceli%2C%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener">Reservar turno</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <span class="eyebrow">Tu espacio de belleza</span>
+        <h1>Realzamos tu mirada, <em>resaltamos tu belleza.</em></h1>
+        <p>Extensiones de pestañas personalizadas para acompañar tu estilo y destacar la belleza natural de tu mirada.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://wa.me/5491136077931?text=Hola%20Araceli%2C%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener">Consultar por WhatsApp ↗</a>
+          <a class="button light" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=1000&q=85" alt="Detalle de mirada y pestañas" />
+        <div class="image-note">Un detalle sutil puede transformar tu mirada.</div>
+      </div>
+    </section>
+
+    <section class="section alt" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Encontrá tu efecto</span>
+          <h2>Pestañas pensadas para vos</h2>
+          <p>Cada mirada es única. Consultanos para elegir el estilo que mejor acompañe tus gustos y el resultado que buscás.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=700&q=85" alt="Estilo de pestañas natural" loading="lazy" />
+            <h3>Efecto natural</h3>
+            <p>Un acabado delicado para realzar tu mirada con sutileza.</p>
+          </article>
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=700&q=85" alt="Mirada con maquillaje suave" loading="lazy" />
+            <h3>Efecto híbrido</h3>
+            <p>Un equilibrio entre definición y volumen para una mirada especial.</p>
+          </article>
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=700&q=85" alt="Retrato de belleza" loading="lazy" />
+            <h3>Volumen</h3>
+            <p>Más presencia y definición, adaptadas al estilo que te gusta.</p>
+          </article>
+          <article class="service">
+            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=700&q=85" alt="Retrato femenino en primer plano" loading="lazy" />
+            <h3>Mega volumen</h3>
+            <p>Un efecto más intenso para quienes aman una mirada protagonista.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="estilo">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Belleza con intención</span>
+          <h2>Tu mirada, tu estilo</h2>
+          <p>Buscamos un resultado que te haga sentir cómoda, segura y hermosa.</p>
+        </div>
+        <div class="promise">
+          <div class="promise-item">
+            <div class="symbol">✧</div>
+            <h3>Estilo personalizado</h3>
+            <p>Conversamos sobre el efecto que querés lograr antes de elegir tu diseño.</p>
+          </div>
+          <div class="promise-item">
+            <div class="symbol">♡</div>
+            <h3>Atención dedicada</h3>
+            <p>Un espacio para dedicarte tiempo y cuidar cada detalle de tu experiencia.</p>
+          </div>
+          <div class="promise-item">
+            <div class="symbol">✿</div>
+            <h3>Detalles que enamoran</h3>
+            <p>Un acabado pensado para acompañar tu belleza y tu personalidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Inspiración</span>
+          <h2>Un vistazo a nuestro estilo</h2>
+          <p>Galería de inspiración visual. Podemos reemplazar estas imágenes por fotos reales de los trabajos de Araceli.</p>
+        </div>
+        <div class="gallery">
+          <img src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=900&q=85" alt="Inspiración de belleza para la mirada" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=700&q=85" alt="Inspiración de maquillaje y pestañas" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=700&q=85" alt="Retrato de belleza natural" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container booking">
+        <span class="eyebrow">Agenda tu momento</span>
+        <h2>¿Lista para realzar tu mirada?</h2>
+        <p>Escribinos por WhatsApp para consultar disponibilidad, conocer los detalles de cada servicio y coordinar tu turno.</p>
+        <a class="button" href="https://wa.me/5491136077931?text=Hola%20Araceli%2C%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener">Quiero reservar mi turno ↗</a>
+      </div>
+    </section>
+
+    <section class="section location" id="ubicacion">
+      <div class="container">
+        <span class="eyebrow">Dónde encontrarnos</span>
+        <h2>Zona Once – Balvanera</h2>
+        <p>CABA, Buenos Aires, Argentina</p>
+        <p>Consultá la dirección exacta y la disponibilidad de turnos por WhatsApp.</p>
+        <a class="button light" href="https://wa.me/5491136077931?text=Hola%20Araceli%2C%20%C2%BFme%20compart%C3%ADs%20la%20ubicaci%C3%B3n%20y%20los%20turnos%20disponibles%3F" target="_blank" rel="noopener">Consultar ubicación ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Araceli Lashes</strong> · Realzamos tu mirada, resaltamos tu belleza.</p>
+    <p>Zona Once–Balvanera, CABA · © <span id="year"></span> Araceli Lashes</p>
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/5491136077931?text=Hola%20Araceli%2C%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">WhatsApp ↗</a>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
